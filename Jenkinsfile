@@ -2,11 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-            
+               steps {
              
                     def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
+               }
+                      steps {
                     bat "${mvnHome}/bin/mvn package" 
-            
+               }
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
