@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn -f kalyanigore/javarepo/pom.xml clean package'
+                cmd 'mvn -f kalyanigore/javarepo/pom.xml clean package'
             }
             post {
                 success {
