@@ -2,9 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-            steps {
-                //
-                    def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
+            {
+             
+                     def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
                     bat "${mvnHome}/bin/mvn package" 
             }
             post {
