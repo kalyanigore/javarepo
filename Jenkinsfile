@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-               steps {
+               script {
              
                     def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
                }
