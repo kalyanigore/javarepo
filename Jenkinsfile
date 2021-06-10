@@ -3,10 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
                steps {
-                 scripts{
-                    def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
-                    bat "${mvnHome}/bin/mvn package" 
-                        }
+                 sh 'mvn -f java-tomcat-sample/pom.xml clean package'
                     }
             post {
                 success {
