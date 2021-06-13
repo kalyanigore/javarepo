@@ -21,12 +21,12 @@ pipeline {
             }
             
         }
-        stage('Deploy to Production'){
+        stage('Create Tomcat Docker Image'){
             steps{
-                timeout(time:5, unit:'DAYS'){
-                    input message:'Approve PRODUCTION Deployment?'
+                sh "docker build . -t tomcatimage:${env.BUILD_ID}"'
+                echo "image created successfully"
                 }
-                build job: 'PROD'
+                
             }
         }
     }
